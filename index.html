@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pokéball background decoration -->
+  <div class="bg-pokeball"></div>
+
+  <div class="game-wrapper">
+
+    <!-- Header -->
+    <header class="game-header">
+      <div class="logo-area">
+        <span class="pokeball-icon"></span>
+        <h1 class="game-title">Memory</h1>
+      </div>
+      <div class="theme-toggle">
+        <button id="themeBtn" class="icon-btn" title="Toggle Theme">Dark Mode</button>
+      </div>
+    </header>
+
+    <!-- Controls Bar -->
+    <section class="controls-bar">
+      <div class="difficulty-group">
+        <label class="ctrl-label">Difficulty</label>
+        <div class="diff-buttons">
+          <button class="diff-btn active" data-diff="easy">Easy</button>
+          <button class="diff-btn" data-diff="medium">Medium</button>
+          <button class="diff-btn" data-diff="hard">Hard</button>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button id="startBtn" class="action-btn start-btn">▶ Start</button>
+        <button id="resetBtn" class="action-btn reset-btn">↺ Reset</button>
+      </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar" id="statsBar">
+      <div class="stat-box">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="timerDisplay">--</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Clicks</span>
+        <span class="stat-value" id="clicksDisplay">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Matched</span>
+        <span class="stat-value" id="matchedDisplay">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Remaining</span>
+        <span class="stat-value" id="remainingDisplay">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Total Pairs</span>
+        <span class="stat-value" id="totalDisplay">0</span>
+      </div>
+      <div class="powerup-box">
+        <button id="powerupBtn" class="powerup-btn" title="Peek Power-Up (1 use per game)">
+          👁 Peek
+          <span class="powerup-badge" id="powerupCount">1</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+      <div class="pokeball-spinner">
+        <div class="spinner-top"></div>
+        <div class="spinner-middle"></div>
+        <div class="spinner-bottom"></div>
+      </div>
+      <p>Catching Pokémon…</p>
+    </div>
+
+    <!-- Card Grid -->
+    <main id="cardGrid" class="card-grid hidden"></main>
+
+    <!-- Message Overlay -->
+    <div id="messageOverlay" class="message-overlay hidden">
+      <div class="message-box">
+        <div class="message-icon" id="messageIcon"></div>
+        <h2 class="message-title" id="messageTitle"></h2>
+        <p class="message-sub" id="messageSub"></p>
+        <button class="action-btn start-btn" id="msgPlayAgainBtn">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Start Prompt -->
+    <div id="startPrompt" class="start-prompt">
+      <div class="prompt-inner">
+        <div class="prompt-pokeballs">
+          <span>🔴</span><span>⚪</span><span>🔵</span>
+        </div>
+        <h2>Ready to Play?</h2>
+        <p>Select a difficulty and press <strong>Start</strong> to begin!</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
